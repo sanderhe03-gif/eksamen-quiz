@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thorvald Meyers gate 43 — eiendomsverdi (mock)</title>
+  <style>
+    :root {
+      --bg: #F3F4F6;
+      --surface: #FFFFFF;
+      --border: #E5E7EB;
+      --text: #111827;
+      --text-muted: #6B7280;
+      --accent: #0F766E;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--bg);
+    }
+    header.topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 8px;
+      font-weight: 700; font-size: 15px;
+    }
+    .logo-mark {
+      width: 26px; height: 26px;
+      border-radius: 6px;
+      background: var(--accent);
+    }
+    .nav {
+      display: flex; gap: 18px; font-size: 13px; color: var(--text-muted);
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .demo-banner {
+      background: #FEF3C7;
+      border: 1px solid #FCD34D;
+      color: #92400E;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    .building-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 26px;
+      margin-bottom: 18px;
+    }
+    .building-card h1 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+    .building-card .sub {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+    .facts {
+      display: flex; gap: 36px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .fact .label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+    .fact .value {
+      font-weight: 600;
+    }
+    .units-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .units-header {
+      padding: 14px 22px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .units-header .count {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th {
+      text-align: left;
+      padding: 10px 22px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      background: #F9FAFB;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody td {
+      padding: 11px 22px;
+      border-bottom: 1px solid #F3F4F6;
+    }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #FAFBFC; }
+    .unit-nr { font-weight: 600; }
+    .owner-full-name { font-weight: 500; }
+    .meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo">
+      <div class="logo-mark"></div>
+      <span>eiendomsverdi</span>
+      <span style="color:var(--text-muted); font-weight:400; font-size:13px;">· mock for local testing</span>
+    </div>
+    <nav class="nav">
+      <span>Min side</span>
+      <span>Eiendom</span>
+      <span>Bygning</span>
+      <span>Kari Nordstrand</span>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="demo-banner">
+      <strong>Demo-side:</strong> Denne siden simulerer DOM-strukturen på en eiendomsverdi.no sameie-visning. Naboprospekt-extensionen vil hente dataene herfra akkurat som den ville gjort på ekte side. Ingen ekte kundedata.
+    </div>
+
+    <section class="building-card">
+      <h1 data-naboprospekt-building>Sameiet Thorvald Meyers gate 43</h1>
+      <div class="sub">0555 Oslo · Grünerløkka · Org.nr 123 456 789</div>
+      <div class="facts">
+        <div class="fact">
+          <div class="label">Antall seksjoner</div>
+          <div class="value">24</div>
+        </div>
+        <div class="fact">
+          <div class="label">Byggeår</div>
+          <div class="value">1906 (renovert 2014)</div>
+        </div>
+        <div class="fact">
+          <div class="label">Siste omsetning</div>
+          <div class="value">Seksjon 7 · 11. apr 2026 · 6 450 000 kr</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="units-card">
+      <div class="units-header">
+        <span>Hjemmelshavere</span>
+        <span class="count">25 oppføringer · kilde: Kartverket Grunnbok</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Seksjon</th>
+            <th>Hjemmelshaver</th>
+            <th>Bostedadresse</th>
+            <th>Postnummer</th>
+          </tr>
+        </thead>
+        <tbody id="unit-list">
+          <!-- rows injected below -->
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+<script>
+  // Realistic sample data mirroring the earlier prototype.
+  const UNITS = [
+    { seksjon: 1,  fornavn: "Astrid",        etternavn: "Berg",        adresse: "Thorvald Meyers gate 43 H0101", postnummer: "0555" },
+    { seksjon: 2,  fornavn: "Magnus",        etternavn: "Andersen",    adresse: "Thorvald Meyers gate 43 H0102", postnummer: "0555" },
+    { seksjon: 3,  fornavn: "Ingrid",        etternavn: "Johansen",    adresse: "Thorvald Meyers gate 43 H0103", postnummer: "0555" },
+    { seksjon: 4,  fornavn: "Lars",          etternavn: "Pedersen",    adresse: "Thorvald Meyers gate 43 H0104", postnummer: "0555" },
+    { seksjon: 4,  fornavn: "Sofie",         etternavn: "Larsen",      adresse: "Thorvald Meyers gate 43 H0104", postnummer: "0555" },
+    { seksjon: 5,  fornavn: "Erik",          etternavn: "Olsen",       adresse: "Thorvald Meyers gate 43 H0201", postnummer: "0555" },
+    { seksjon: 6,  fornavn: "Marit",         etternavn: "Kristiansen", adresse: "Thorvald Meyers gate 43 H0202", postnummer: "0555" },
+    { seksjon: 7,  fornavn: "Kristine",      etternavn: "Wang",        adresse: "Thorvald Meyers gate 43 H0203", postnummer: "0555" },
+    { seksjon: 8,  fornavn: "Per",           etternavn: "Thomassen",   adresse: "Thorvald Meyers gate 43 H0204", postnummer: "0555" },
+    { seksjon: 9,  fornavn: "Ole",           etternavn: "Hansen",      adresse: "Thorvald Meyers gate 43 H0301", postnummer: "0555" },
+    { seksjon: 10, fornavn: "Kari",          etternavn: "Nordmann",    adresse: "Thorvald Meyers gate 43 H0302", postnummer: "0555" },
+    { seksjon: 11, fornavn: "Nina",          etternavn: "Solberg",     adresse: "Thorvald Meyers gate 43 H0303", postnummer: "0555" },
+    { seksjon: 12, fornavn: "Håkon",         etternavn: "Rygg",        adresse: "Thorvald Meyers gate 43 H0304", postnummer: "0555" },
+    { seksjon: 13, fornavn: "Elisabeth",     etternavn: "Moen",        adresse: "Thorvald Meyers gate 43 H0401", postnummer: "0555" },
+    { seksjon: 14, fornavn: "Trond",         etternavn: "Lie",         adresse: "Thorvald Meyers gate 43 H0402", postnummer: "0555" },
+    { seksjon: 15, fornavn: "AS Meyers Eiendom", etternavn: "",        adresse: "Storgata 10",                  postnummer: "0155" },
+    { seksjon: 16, fornavn: "Mette",         etternavn: "Halvorsen",   adresse: "Thorvald Meyers gate 43 H0404", postnummer: "0555" },
+    { seksjon: 17, fornavn: "Fredrik",       etternavn: "Haugen",      adresse: "Thorvald Meyers gate 43 H0501", postnummer: "0555" },
+    { seksjon: 18, fornavn: "Silje",         etternavn: "Berntsen",    adresse: "Thorvald Meyers gate 43 H0502", postnummer: "0555" },
+    { seksjon: 19, fornavn: "Kjell Arne",    etternavn: "Dahl",        adresse: "Thorvald Meyers gate 43 H0503", postnummer: "0555" },
+    { seksjon: 20, fornavn: "Anne-Kristine", etternavn: "Viken",       adresse: "Thorvald Meyers gate 43 H0504", postnummer: "0555" },
+    { seksjon: 21, fornavn: "Bjørn",         etternavn: "Opsahl",      adresse: "Thorvald Meyers gate 43 H0601", postnummer: "0555" },
+    { seksjon: 22, fornavn: "Kari",          etternavn: "Nordstrand",  adresse: "Thorvald Meyers gate 43 H0602", postnummer: "0555" },
+    { seksjon: 23, fornavn: "Morten",        etternavn: "Ek",          adresse: "Thorvald Meyers gate 43 H0603", postnummer: "0555" },
+    { seksjon: 24, fornavn: "Johanne",       etternavn: "Storli",      adresse: "Thorvald Meyers gate 43 H0604", postnummer: "0555" },
+  ];
+
+  const tbody = document.getElementById("unit-list");
+  for (const u of UNITS) {
+    const tr = document.createElement("tr");
+    tr.setAttribute("data-naboprospekt-row", "");
+    const fullName = `${u.fornavn} ${u.etternavn}`.trim();
+    tr.innerHTML = `
+      <td class="unit-nr">${u.seksjon}</td>
+      <td>
+        <div class="owner-full-name" data-field="full-name">${fullName}</div>
+        <span data-field="fornavn" hidden>${u.fornavn}</span>
+        <span data-field="etternavn" hidden>${u.etternavn}</span>
+      </td>
+      <td data-field="adresse">${u.adresse}</td>
+      <td data-field="postnummer">${u.postnummer}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+</script>
+</body>
+</html>
